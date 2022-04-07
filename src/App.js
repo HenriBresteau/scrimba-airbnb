@@ -6,19 +6,7 @@ import Navbar from "./Components/Navbar";
 import dataCard from "./data";
 export default function App() {
   const cards = dataCard.map((item) => {
-    return (
-      <Card
-        key={item.id}
-        img={item.coverImg}
-        openSpots={item.openSpots}
-        rate={item.stats.rating}
-        reviewCount={item.stats.reviewCount}
-        location={item.location}
-        title={item.title}
-        description={item.description}
-        price={item.price}
-      />
-    );
+    return <Card key={item.id} item={item} />;
   });
   return (
     <div>
