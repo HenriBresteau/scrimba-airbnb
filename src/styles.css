@@ -43,3 +43,57 @@ section {
   font-size: 16px;
   line-height: 110%;
 }
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 176px;
+}
+.card--img__container {
+  position: relative;
+}
+.card--img__container::after {
+  content: "sold out";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  padding: 6px;
+  background: white;
+  color: #222;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 110%;
+  border-radius: 2px;
+}
+.card--img {
+  width: 100%;
+  border-radius: 9px;
+}
+.card--description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 110%;
+}
+.card--rating__container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.card--rating {
+  width: 14px;
+  height: 14px;
+}
+.card--rating p {
+  color: #222;
+}
+.card--rating p span {
+  color: #918e9b;
+}

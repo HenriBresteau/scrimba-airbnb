@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Components/Card";
 import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
 
@@ -7,6 +8,11 @@ export default function App() {
     <div>
       <Navbar />
       <Hero />
+      <section className="card-container">
+        <Card />
+        <Card />
+        <Card />
+      </section>
     </div>
   );
 }
