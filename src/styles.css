@@ -45,7 +45,9 @@ section {
 }
 .card-container {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 .card {
   display: flex;
@@ -55,8 +57,7 @@ section {
 .card--img__container {
   position: relative;
 }
-.card--img__container::after {
-  content: "sold out";
+.card--img__sold {
   position: absolute;
   top: 0;
   left: 0;
@@ -69,10 +70,14 @@ section {
   font-weight: 400;
   line-height: 110%;
   border-radius: 2px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
 .card--img {
   width: 100%;
+  max-height: 235px;
+  object-fit: cover;
   border-radius: 9px;
+  margin-bottom: 9px;
 }
 .card--description {
   display: flex;
@@ -87,13 +92,17 @@ section {
   align-items: center;
   gap: 2px;
 }
+.card--rating__container p {
+  color: #222;
+}
+.card--rating__container p span {
+  color: #918e9b;
+}
 .card--rating {
   width: 14px;
   height: 14px;
 }
-.card--rating p {
-  color: #222;
-}
-.card--rating p span {
-  color: #918e9b;
+.card--text h2 {
+  line-height: 120%;
+  margin-bottom: 10px;
 }
