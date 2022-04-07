@@ -1,26 +1,43 @@
 import React from "react";
-import katie from "../images/katie.png";
-import star from "../images/star.svg";
 
-export default function Card() {
+export default function Card({
+  title,
+  rate,
+  reviewCount,
+  openSpots,
+  location,
+  description,
+  price,
+  img,
+}) {
   return (
     <div className="card">
       <div className="card--img__container">
-        <img src={katie} alt="katie" className="card--img" />
+        <img src={`../images/${img}`} alt={title} className="card--img" />
+
+        {openSpots > 0 ? (
+          <div className="card--img__sold">Online</div>
+        ) : (
+          <div className="card--img__sold">Sold Out</div>
+        )}
       </div>
       <div className="card--description">
         <div className="card--rating__container">
-          <img src={star} alt="star" className="card--rating" />
+          <img src="../images/star.svg" alt="star" className="card--rating" />
           <p>
-            5.0 <span>(6) • USA</span>
+            {rate}{" "}
+            <span>
+              ({reviewCount}) • {location}
+            </span>
           </p>
         </div>
         <div className="card--text">
-          <p>Life lessons with Katie Zofers</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
         </div>
         <div className="card--price">
           <p>
-            <strong> From $136</strong> / person
+            <strong> From $ {price}</strong> / person
           </p>
         </div>
       </div>
